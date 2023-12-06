@@ -2,7 +2,7 @@ package day02
 
 import Day
 
-object Day02 : Day {
+object Today : Day {
     override val day: Int
         get() = 2
 
@@ -16,5 +16,4 @@ object Day02 : Day {
 }
 
 fun main() {
-
 }

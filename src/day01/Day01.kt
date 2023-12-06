@@ -2,8 +2,10 @@ package day01
 
 import Day
 
-object Day01 : Day {
-    override val day: Int get() = 1
+object Today : Day {
+    override val day: Int
+        get() = 1
+
     private fun getDigitsForRow(row: String): Int {
         var digits = ""
         for (c in row) {
@@ -43,6 +45,6 @@ object Day01 : Day {
 }
 
 fun main() {
-    Day01.solve(Day.TestCase("test1", 142)) { input: List<String> -> Day01.part1(input) }
-    Day01.solve(Day.TestCase("test2", 281)) { input: List<String> -> Day01.part2(input) }
+    Today.solve1("test1", 142)
+    Today.solve2("test2", 281)
 }

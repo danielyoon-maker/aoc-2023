@@ -4,12 +4,17 @@ interface Day {
 
     fun part2(input: List<String>): Long
 
-    fun solve(testCase: TestCase, runner: (List<String>) -> Long) {
-        val testOutput = runner(readInput(day, testCase.fileName))
-        check(testOutput == testCase.expectedOutput) { "Expected $testOutput but got ${testCase.expectedOutput}" }
+    fun solve1(fileName: String, expectedOutput: Long) {
+        val testOutput = part1(readInput(day, fileName))
+        check(testOutput == expectedOutput) { "Expected $testOutput but got $expectedOutput" }
 
-        println(runner(readInput(day, "input")))
+        println(part1(readInput(day, "input")))
     }
 
-    data class TestCase(val fileName: String, val expectedOutput: Long)
+    fun solve2(fileName: String, expectedOutput: Long) {
+        val testOutput = part2(readInput(day, fileName))
+        check(testOutput == expectedOutput) { "Expected $testOutput but got $expectedOutput" }
+
+        println(part2(readInput(day, "input")))
+    }
 }
