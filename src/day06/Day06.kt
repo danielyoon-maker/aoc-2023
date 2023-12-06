@@ -55,8 +55,8 @@ fun main() {
         return findLastWin(time, distanceToBeat) - findFirstWin(time, distanceToBeat) + 1
     }
 
-    val testInput = readInput("resources/day06/test1")
-    val realInput = readInput("resources/day06/input")
+    val testInput = readInput(6, "resources/day06/test1")
+    val realInput = readInput(6, "resources/day06/input")
 
     check(part1(testInput)==288L)
 
