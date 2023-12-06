@@ -1,6 +1,7 @@
 package day01
 
 import Day
+
 object Day01 : Day {
     override val day: Int get() = 1
     private fun getDigitsForRow(row: String): Int {

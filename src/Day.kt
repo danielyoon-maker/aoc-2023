@@ -10,5 +10,6 @@ interface Day {
 
         println(runner(readInput(day, "input")))
     }
+
     data class TestCase(val fileName: String, val expectedOutput: Long)
 }
