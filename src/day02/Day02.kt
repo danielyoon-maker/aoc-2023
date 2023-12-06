@@ -16,4 +16,6 @@ object Today : Day {
 }
 
 fun main() {
+    Today.solve1("test1", 8)
+    Today.solve2("input", 2286)
 }
