@@ -26,6 +26,7 @@ fun main() {
             "seven" to 7, "eight" to 8, "nine" to 9)
         val numbers = wordMapping.keys.plus(arrayOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"))
         val regex = numbers.joinToString(prefix = "(?i)", separator = "|").toRegex()
+        // Regex.findAll doesn't support overlapping sequences so we just aggressively retry
         val matches = generateSequence(regex.find(row, 0)) { regex.find(row, it.range.first + 1) }
         return 10 * lazyGetter(wordMapping, matches.first().value) + lazyGetter(wordMapping, matches.last().value)
     }
