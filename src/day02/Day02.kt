@@ -22,11 +22,11 @@ object Today : Day {
                 }
             }
         }
-        return counts.values.map { intValue -> intValue.toLong() }.reduce(Long::times)
+        return counts.values.map(Int::toLong).reduce(Long::times)
     }
 
     private fun isValidGame(games: List<String>): Boolean {
-        return games.all { round -> isValidRound(round) }
+        return games.all(this::isValidRound)
     }
 
     private fun gameScore(row: String): Int {
@@ -35,7 +35,7 @@ object Today : Day {
     }
 
     override fun part1(input: List<String>): Long {
-        return input.sumOf { row -> gameScore(row) }.toLong()
+        return input.sumOf(this::gameScore).toLong()
     }
 
     override fun part2(input: List<String>): Long {

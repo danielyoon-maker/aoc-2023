@@ -17,10 +17,7 @@ object Today : Day {
     }
 
     private fun lazyGetter(mapping: Map<String, Int>, number: String): Int {
-        if (mapping.containsKey(number)) {
-            return mapping[number]!!
-        }
-        return number[0].digitToInt()
+        return if (mapping.containsKey(number)) mapping[number]!! else number.first().digitToInt()
     }
 
     private fun getDigitsOrWordsForRow(row: String): Int {
@@ -36,11 +33,11 @@ object Today : Day {
     }
 
     override fun part1(input: List<String>): Long {
-        return input.sumOf { row -> getDigitsForRow(row) }.toLong()
+        return input.sumOf(this::getDigitsForRow).toLong()
     }
 
     override fun part2(input: List<String>): Long {
-        return input.sumOf { row -> getDigitsOrWordsForRow(row) }.toLong()
+        return input.sumOf(this::getDigitsOrWordsForRow).toLong()
     }
 }
 

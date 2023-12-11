@@ -7,10 +7,8 @@ import kotlin.io.path.readLines
  * Reads lines from the given input txt file.
  */
 fun readInput(day: Int, name: String) =
-    Path("src/resources/day${day.toString().padStart(2, '0')}/$name.txt").readLines()
+    Path("resources/day${day.toString().padStart(2, '0')}/$name.txt").readLines()
 
-fun spaceSeparatedInts(input: String, delimiter: String): List<Int> =
-    input.trim().split(delimiter.toRegex()).map { charInt -> charInt.toInt() }
 /**
  * Converts string to md5 hash.
  */
